@@ -1,0 +1,102 @@
+/* Estilos gerais */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Estilos gerais */
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #5edb00;
+}
+
+.container {
+    background-color: #5CA822;
+    border: 2px solid #333;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px; /* Defina uma largura máxima para a área de conteúdo */
+    margin: 0 auto; /* Centralize o conteúdo na tela */
+    min-height: 400px; /* Defina uma altura mínima para o painel */
+    display: flex;
+    flex-direction: column; /* Alinhe o conteúdo verticalmente */
+    justify-content: center; /* Centralize verticalmente */
+}
+
+.container h1 {
+    padding-bottom: 10px;
+    color: #fff;
+}
+
+.container-info h2 {
+    background-color: #fff;
+    border: 2px solid #000;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer; /* Adicione um cursor de apontar para indicar que é clicável */
+}
+
+.container-info h2::before {
+    content: "▶";
+    margin-right: 5px;
+}
+
+.container-info h2.open::before {
+    content: "▼"; /* Altere o ícone para indicar que o conteúdo está aberto */
+}
+
+.esconder-detalhes {
+    display: none;
+}
+
+.container-info.open .esconder-detalhes {
+    display: block; /* Exiba os detalhes quando o h2 estiver com a classe open */
+}
+
+.esconder-detalhes {
+    background-color: #fff;
+    font-size: 20px;
+    border-radius: 5px;
+    box-shadow: -10px 0 10px -10px #000, 10px 0 10px -10px #000;
+    padding-bottom: 10px;
+    margin-bottom: 6px;
+    margin-top: 6px;
+}
+
+.esconder-detalhes a {
+    color: #0065a8;
+}
+
+.esconder-detalhes p,
+.esconder-detalhes ul,
+.esconder-detalhes li {
+    color: #333;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: -10px 0 10px -10px #000, 10px 0 10px -10px #000;
+    list-style-type: none;
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px; /* Reduza o preenchimento para dispositivos móveis */
+    }
+
+    .container-info h2::before {
+        display: none; /* Ocultar o ícone de seta em dispositivos móveis */
+    }
+
+    .esconder-detalhes {
+        margin-left: 0; /* Redefina a margem à esquerda para dispositivos móveis */
+        box-shadow: none; /* Remova a sombra para dispositivos móveis */
+    }
+}
